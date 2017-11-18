@@ -19,9 +19,8 @@ public class Main {
 
         // load token from config
         Settings settings = new Settings();
-        System.out.println(settings.getToken());
 
-        //JDA jda = new JDABuilder(AccountType.BOT).setToken(settings.getToken()).buildBlocking();
+        JDA jda = new JDABuilder(AccountType.BOT).setToken(settings.getToken()).buildBlocking();
         System.out.println("Hello world");
     }
 }
