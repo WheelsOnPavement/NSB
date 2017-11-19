@@ -1,13 +1,16 @@
+import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.MessageChannel;
 import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
+import java.awt.*;
+
 public class Commands extends ListenerAdapter{
     private static final String CMD_PREFIX = "!";
 
-    //@Override
+    @Override
     public void onMessageReceived(MessageReceivedEvent e){
         String[] command = e.getMessage().getContent().split(" ");
 
@@ -18,11 +21,19 @@ public class Commands extends ListenerAdapter{
         if(!command[0].startsWith(CMD_PREFIX)){
             return;
         }else if(command[0].equalsIgnoreCase("!ping")){
+            String returnMsg = "pong " + e.getJDA().getPing() + " ";
 
-            String returnMsg = "Pong!";
-            channel.sendMessage(returnMsg).queue();
-
+            if(command.length == 1){
+                e.getChannel().sendMessage(returnMsg).queue();
+            }
+            else if(command.length == 2 && command[1].equalsIgnoreCase("-e")){
+                EmbedBuilder eb = new EmbedBuilder();
+                eb.setColor(Color.GREEN);
+                eb.setDescription(returnMsg);
+                e.getChannel().sendMessage(eb.build()).queue();
+            }
         }
+
 
     }
 
