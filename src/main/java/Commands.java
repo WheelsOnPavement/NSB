@@ -7,8 +7,9 @@ import net.dv8tion.jda.core.hooks.ListenerAdapter;
 public class Commands extends ListenerAdapter{
     private static final String CMD_PREFIX = "!";
 
-    //@Override
-    public void onMessageRecieved(MessageReceivedEvent e){
+    @Override
+    public void onMessageReceived(MessageReceivedEvent e){
+    public void onMessageReceived(MessageReceivedEvent e){
         String[] command = e.getMessage().getContent().split(" ");
 
         Message msg = e.getMessage();
