@@ -23,7 +23,7 @@ public class Main implements EventListener{
         Settings settings = new Settings();
         String token = settings.getToken();
 
-        System.out.println("Token recieved: " + token);
+        System.out.println("Token received: " + token);
 
         JDA jda = new JDABuilder(AccountType.BOT).setToken(token).buildBlocking();
         jda.getPresence().setGame(Game.of("Patrick"));
