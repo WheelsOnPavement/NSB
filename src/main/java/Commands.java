@@ -21,7 +21,7 @@ public class Commands extends ListenerAdapter{
         if(!command[0].startsWith(CMD_PREFIX)){
             return;
         }else if(command[0].equalsIgnoreCase("!ping")){
-            String returnMsg = "Pong! " + e.getJDA().getPing() + " ms";
+            String returnMsg = "pong " + e.getJDA().getPing() + " ";
 
             if(command.length == 1){
                 e.getChannel().sendMessage(returnMsg).queue();
@@ -32,6 +32,9 @@ public class Commands extends ListenerAdapter{
                 eb.setDescription(returnMsg);
                 e.getChannel().sendMessage(eb.build()).queue();
             }
+        }else if(command[0].equalsIgnoreCase("!play"))
+        {
+            return;
         }
 
 
