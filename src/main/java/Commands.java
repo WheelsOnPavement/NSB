@@ -18,6 +18,8 @@ public class Commands extends ListenerAdapter{
         MessageChannel channel = e.getTextChannel();
         User user = e.getAuthor();
 
+        Settings settings = new Settings();
+
         if(!command[0].startsWith(CMD_PREFIX)){
             return;
         }else if(command[0].equalsIgnoreCase("!ping")){
@@ -34,7 +36,8 @@ public class Commands extends ListenerAdapter{
             }
         }else if(command[0].equalsIgnoreCase("!play"))
         {
-            return;
+            e.getChannel().sendMessage(settings.getVoiceID()).queue();
+
         }
 
 
