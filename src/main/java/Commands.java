@@ -28,7 +28,7 @@ public class Commands extends ListenerAdapter{
             }
             else if(command.length == 2 && command[1].equalsIgnoreCase("-e")){
                 EmbedBuilder eb = new EmbedBuilder();
-                eb.setColor(Color.GREEN);
+                eb.setColor(Color.RED);
                 eb.setDescription(returnMsg);
                 e.getChannel().sendMessage(eb.build()).queue();
             }
