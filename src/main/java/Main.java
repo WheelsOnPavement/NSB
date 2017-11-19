@@ -1,6 +1,7 @@
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
+import net.dv8tion.jda.core.entities.Game;
 import net.dv8tion.jda.core.exceptions.RateLimitedException;
 
 import javax.security.auth.login.LoginException;
@@ -24,8 +25,12 @@ public class Main {
         System.out.println("Token recieved: " + token);
 
         JDA jda = new JDABuilder(AccountType.BOT).setToken(token).buildBlocking();
+        jda.getPresence().setGame(Game.of("Patrick"));
         jda.addEventListener(new Commands());
-        System.out.println("Hello world");
+        jda.addEventListener(new Main());
+
+
+        //System.out.println("Hello world");
 
 
 
