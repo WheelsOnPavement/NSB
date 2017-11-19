@@ -3,6 +3,7 @@ import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Game;
 import net.dv8tion.jda.core.exceptions.RateLimitedException;
+import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
 import javax.security.auth.login.LoginException;
 import java.io.FileOutputStream;
@@ -11,7 +12,7 @@ import java.io.OutputStream;
 import java.util.EventListener;
 import java.util.Properties;
 
-public class Main implements EventListener{
+public class Main extends ListenerAdapter {
 
     public static void main(String[] args) throws LoginException, InterruptedException, RateLimitedException {
 
@@ -23,7 +24,7 @@ public class Main implements EventListener{
         Settings settings = new Settings();
         String token = settings.getToken();
 
-        System.out.println("Token recieved: " + token);
+        System.out.println("Token received: " + token);
 
         JDA jda = new JDABuilder(AccountType.BOT).setToken(token).buildBlocking();
         jda.getPresence().setGame(Game.of("Patrick"));
