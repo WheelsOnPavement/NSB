@@ -8,9 +8,10 @@ import javax.security.auth.login.LoginException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.EventListener;
 import java.util.Properties;
 
-public class Main {
+public class Main implements EventListener{
 
     public static void main(String[] args) throws LoginException, InterruptedException, RateLimitedException {
 
