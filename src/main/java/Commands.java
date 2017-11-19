@@ -32,6 +32,9 @@ public class Commands extends ListenerAdapter{
                 eb.setDescription(returnMsg);
                 e.getChannel().sendMessage(eb.build()).queue();
             }
+        }else if(command[0].equalsIgnoreCase("!play"))
+        {
+            return;
         }
 
 
