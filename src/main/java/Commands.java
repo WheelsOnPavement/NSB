@@ -21,7 +21,7 @@ public class Commands extends ListenerAdapter{
         if(!command[0].startsWith(CMD_PREFIX)){
             return;
         }else if(command[0].equalsIgnoreCase("!ping")){
-            String returnMsg = "pong " + e.getJDA().getPing() + " ";
+            String returnMsg = "Pong! " + e.getJDA().getPing() + " ms";
 
             if(command.length == 1){
                 e.getChannel().sendMessage(returnMsg).queue();
