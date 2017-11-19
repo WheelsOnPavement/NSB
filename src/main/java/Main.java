@@ -25,5 +25,6 @@ public class Main {
 
         JDA jda = new JDABuilder(AccountType.BOT).setToken(token).buildBlocking();
         System.out.println("Hello world");
+        System.out.println("Hello World2");
     }
 }
