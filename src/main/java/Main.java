@@ -24,6 +24,7 @@ public class Main {
         System.out.println("Token recieved: " + token);
 
         JDA jda = new JDABuilder(AccountType.BOT).setToken(token).buildBlocking();
+        jda.addEventListener(new Commands());
         System.out.println("Hello world");
 
 
