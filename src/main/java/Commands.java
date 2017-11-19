@@ -9,7 +9,6 @@ public class Commands extends ListenerAdapter{
 
     @Override
     public void onMessageReceived(MessageReceivedEvent e){
-    public void onMessageReceived(MessageReceivedEvent e){
         String[] command = e.getMessage().getContent().split(" ");
 
         Message msg = e.getMessage();
